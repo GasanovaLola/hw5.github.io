@@ -1,4 +1,4 @@
-// 1
+// 1 +
 
 function fillingMass(arr , size) {
     for (let i = 0; i < size; i++) {
@@ -15,28 +15,20 @@ var size = 5;
 fillingMass(arr, size);
 
 
-//2
+//2 +
 
 function comparisonMass(arr1, arr2) {
     var sum1 = 0;
     var sum2 = 0;
     var size = 0;
 
-    if (arr1.length > arr2.length) {
-        size = arr1.length;
-    }
-    else if (arr1.length < arr2.length) {
-        size = arr2.length;
-    }
-    else {
-        size = arr2.length;
-    }
+    size = Math.max(arr1.length, arr2.length);
 
     for (let i = 0; i < size; i++) {
-        if (+arr1[i] === arr1[i]) {
+        if (+arr1[i] === arr1[i] && arr1.length > i) {
             sum1 += (+arr1[i]);
         }
-        if (+arr2[i] === arr2[i]) {
+        if (+arr2[i] === arr2[i] && arr2.length > i) {
             sum2 += (+arr2[i]);
         }
     }
@@ -52,24 +44,44 @@ function comparisonMass(arr1, arr2) {
     }
 }
 
-var arr1 = [1, "io", 10, 4];
-var arr2 = [3, "yuy", 12, 1];
+var arr1 = [1, "io", 10, 20];
+var arr2 = [3, "yuy", 11, 1];
 
 console.log(comparisonMass(arr1, arr2));
 
-// 3
+// 3 +
 
 function doMath(x, znak, y) {
-    console.log(eval(arguments[0] + arguments[1] + arguments[2]));
+    if (znak === "+") {
+        return x + y;
+    }
+    else if (znak == "-") {
+        return x - y;
+    }
+    else if (znak == "*") {
+        return x * y;
+    }
+    else if (znak == "/") {
+        return x / y;
+    }
+    else if (znak == "%") {
+        return x % y;
+    }
+    else if (znak == "^") {
+        return Math.pow(x, y); 
+    }
+    else if (znak == "") {
+        return "Error";
+    }
 }
 
-var x = "1";
-var y = "8";
-var znak = "/";
+var x = 89;
+var y = 1;
+var znak = "%";
 
-doMath(x, znak, y);
+console.log(doMath(x, znak, y))
 
-// 4 
+// 4 +
 
 function func(str, mass) {
 
@@ -86,19 +98,24 @@ function func(str, mass) {
     }
 }
 
-console.log(func("hello world", ['l', 'd']));
+func("hello world", ['l', 'd']);
 
 // 5
-/*function filter (input, isEven) {
-    
-}
-
-var input = [1, 2, 3, 4, 5, 6];
 
 function isEven(x) { 
     return x % 2 == 0; 
 }
 
-console.log(isEven(), "isEven");
+function filter (input, isEven) {
+    var newArr = [];
+    for(var i = 0; i < input.length; i++){
+        if(isEven(input)){
+            newArr = input[i];
+        }
+        return newArr;
+    }
+}
 
-console.log(filter(input, isEven)); // [2, 4, 6]*/
+var input = [1, 2, 3, 4, 5, 6];
+
+console.log(filter(input, isEven)); 
