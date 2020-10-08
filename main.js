@@ -55,22 +55,22 @@ function doMath(x, znak, y) {
     if (znak === "+") {
         return x + y;
     }
-    else if (znak == "-") {
+    else if (znak === "-") {
         return x - y;
     }
-    else if (znak == "*") {
+    else if (znak === "*") {
         return x * y;
     }
-    else if (znak == "/") {
+    else if (znak === "/") {
         return x / y;
     }
-    else if (znak == "%") {
+    else if (znak === "%") {
         return x % y;
     }
-    else if (znak == "^") {
+    else if (znak === "^") {
         return Math.pow(x, y); 
     }
-    else if (znak == "") {
+    else if (znak === "") {
         return "Error";
     }
 }
@@ -103,7 +103,7 @@ func("hello world", ['l', 'd']);
 // 5
 
 function isEven(x) { 
-    return x % 2 == 0; 
+    return x % 2 === 0; 
 }
 
 function filter (input, isEven) {
